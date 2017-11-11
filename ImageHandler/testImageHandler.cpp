@@ -5,5 +5,5 @@
 int main() {
 	cv::Mat m = cv::imread("Corvette.jpg");
 	auto obj = imhan(m);
-	obj->canny()->dump("", "Corvette_canny.jpg");
+	obj->canny()->dump("", "Corvette_canny.jpg"); //canny
 }
