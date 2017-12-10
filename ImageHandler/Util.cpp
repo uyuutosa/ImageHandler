@@ -73,9 +73,10 @@ std::vector<std::string> walk(std::string dirName, std::string expansion) {
 	for(auto a: std::experimental::filesystem::recursive_directory_iterator(dirName)) {
 		std::stringstream ss;
 		ss << a;
-		if (isExpansion(ss.str(), expansion)) {
-			ret.push_back(ss.str());
-		}
+		if(!std::experimental::filesystem::is_directory(a))
+			if (isExpansion(ss.str(), expansion)) {
+				ret.push_back(ss.str());
+			}
 	}
 
 	return ret;
