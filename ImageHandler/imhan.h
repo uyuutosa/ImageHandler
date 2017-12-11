@@ -23,7 +23,7 @@
 std::shared_ptr<imageHandler>  imhan(cv::Mat &m);
 std::shared_ptr<imageHandler>  imhan(std::map<std::string, cv::Mat> &map);
 std::shared_ptr<imageHandler>  imhan(std::pair<std::string, cv::Mat> &pair);
-std::shared_ptr<imageHandler>  imhan(std::string name);
+std::shared_ptr<imageHandler>  imhan(std::string path, bool isDir=false);
 
 
 //class imhan{

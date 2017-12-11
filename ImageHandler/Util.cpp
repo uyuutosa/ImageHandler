@@ -78,7 +78,6 @@ std::vector<std::string> walk(std::string dirName, std::string expansion) {
 				ret.push_back(ss.str());
 			}
 	}
-
 	return ret;
 }
 

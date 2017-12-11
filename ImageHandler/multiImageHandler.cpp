@@ -33,18 +33,19 @@ multiImageHandler::multiImageHandler(std::deque<std::shared_ptr<imageHandler> > 
      *            cv::imread()で取得する。
      * @param[in] input_name フォルダ名。
      */
-multiImageHandler::multiImageHandler(std::string &input_name){
+multiImageHandler::multiImageHandler(std::string input_name){
 
     
     try{
+		for (auto a : walk(input_name, "")){
         //for (auto a: util::flst(input_name+"\\*")){
-        //    
-        //    //std::cout << a.find("DIR")<< std::endl;
-        //    if(a.find("DIR") != std::string::npos) 
-        //        continue;
-    	//    m_lst.push_back(std::shared_ptr<singleImageHandler>
-        //                   (new singleImageHandler(input_name+"\\"+a)));
-    	//}
+            
+            //std::cout << a.find("DIR")<< std::endl;
+            //if(a.find("DIR") != std::string::npos) 
+            //    continue;
+    	    m_lst.push_back(std::shared_ptr<singleImageHandler>
+                           (new singleImageHandler(a)));
+    	}
     } catch(std::string error){
         std::cerr << error << std::endl;
         

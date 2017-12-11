@@ -50,7 +50,7 @@ public:
      *            cv::imread()で取得する。
      * @param[in] input_name フォルダ名。
      */
-    multiImageHandler(std::string &input_name);
+    multiImageHandler(std::string input_name);
 
 
     /*!
