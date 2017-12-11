@@ -19,3 +19,5 @@ bool isExpansion(std::string path, std::string expansion);
 std::vector<std::string> walk(std::string dirName, std::string extension);
 
 std::vector<std::string> split(const std::string &str, char sep);
+
+std::string getExtension(std::string path);

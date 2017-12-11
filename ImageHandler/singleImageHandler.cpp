@@ -130,7 +130,7 @@ std::shared_ptr<imageHandler> singleImageHandler::clip(cv::Rect &input_rect, boo
 //std::shared_ptr<imageHandler> singleImageHandler::clip(cv::Rect &input_rect){
 //}
 
-void singleImageHandler::view(std::string input_name, int wTime){
+void singleImageHandler::view(std::string input_name, int wTime, bool isMovie){
     if (!(m.cols || m.rows))
         return;
 

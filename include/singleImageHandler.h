@@ -408,10 +408,11 @@ public:
 
     /*! 
      * @brief     画像を表示する。
-     * @param[in] input_name  画像タイトル。
-     * @param[in] wTime 画像表示の待機時間。
+     * @param[in] input_name 画像タイトル。
+     * @param[in] wTime      画像表示の待機時間。
+	 * @param[in] isMovie    動画で表示するか。
      */
-    virtual void view(std::string input_name="obj", int wTime=0);
+	virtual void view(std::string input_name = "obj", int wTime = 0, bool isMovie = false);
 
     /*! 
      * @brief     画像の輝度ヒストグラムを表示する。

@@ -91,3 +91,19 @@ std::vector<std::string> split(const std::string &str, char sep)
     }
     return v;
 }
+
+std::string getExtension(std::string path)
+{
+	std::string ret;
+	int n(path.rfind("."));
+	
+
+	if (n <= 1) {
+		std::cout << "no extension found. Is this a directory?" << std::endl;
+		return std::string();
+	}
+
+	int extLen(path.size() - n);
+
+	return path.substr(n+1, extLen);
+}

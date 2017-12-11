@@ -52,6 +52,18 @@ multiImageHandler::multiImageHandler(std::string input_name){
     }
 }
 
+multiImageHandler::multiImageHandler(std::vector<cv::Mat> input_obj){
+    try{
+		for (auto a : input_obj){
+    	    m_lst.push_back(std::shared_ptr<singleImageHandler>
+                           (new singleImageHandler(a)));
+    	}
+    } catch(std::string error){
+        std::cerr << error << std::endl;
+        
+    }
+}
+
 
 void multiImageHandler::initializePointers(){
 }
@@ -617,13 +629,18 @@ bool multiImageHandler::all(){
 
 // •`‰æ—pŠÖ”
 
-void multiImageHandler::view(std::string input_name, int wTime){
+void multiImageHandler::view(std::string input_name, int wTime, bool isMovie){
     int cnt(0);
-    for(int i=0; i<m_lst.size(); i++){
-        std::stringstream ss;
-        ss << "No. " << i; 
-        m_lst[i]->view(ss.str(), wTime);
-    }
+	if (isMovie)
+		for(int i=0; i<m_lst.size(); i++){
+    	    m_lst[i]->view(input_name, wTime);
+    	}
+	else
+		for(int i=0; i<m_lst.size(); i++){
+    	    std::stringstream ss;
+    	    ss << "No. " << i; 
+    	    m_lst[i]->view(ss.str(), wTime);
+    	}
 }
 
 void multiImageHandler::histView(

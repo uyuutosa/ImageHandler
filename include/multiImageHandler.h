@@ -45,6 +45,13 @@ public:
     multiImageHandler(std::deque<std::shared_ptr<imageHandler> > input_obj);
 
     /*!
+     * @brief     コンストラクタ(std::vector<cv::Mat>用)
+     * @details   入力画像が格納されたコンテナを受け取る。
+     * @param[in] input_obj 入力画像が格納されたコンテナ。
+     */
+	multiImageHandler::multiImageHandler(std::vector<cv::Mat> input_obj);
+
+    /*!
      * @brief     コンストラクタ(フォルダ名)
      * @details   指定フォルダに格納されている画像を
      *            cv::imread()で取得する。
@@ -400,7 +407,7 @@ public:
      * @param[in] input_name  画像タイトル。
      * @param[in] wTime 画像表示の待機時間。
      */
-    virtual void view(std::string input_name="obj", int wTime=0);
+	virtual void view(std::string input_name = "obj", int wTime = 0, bool isMovie = false);
 
     /*! 
      * @brief     画像の輝度ヒストグラムを表示する。

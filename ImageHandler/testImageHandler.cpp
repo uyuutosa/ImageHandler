@@ -9,7 +9,8 @@ int main() {
 	//	std::cout << a << std::endl;
 
 	//auto obj = imhan(".", true);
-	auto obj = imhan("C:/Users/sleep/ownCloud/share/tmp/North", true);
+	//auto obj = imhan("C:/Users/sleep/ownCloud/share/tmp/North", true);
+	auto obj = imhan("testMov.mp4", false);
 	//obj->dump("", "Corvette_canny.jpg"); //canny
-	obj->canny()->view();
+	obj->gridImage(4,4)->RGB2Gray()->stichImg(4,4)->view("hello", 1, true);
 }

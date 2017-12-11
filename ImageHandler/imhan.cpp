@@ -22,7 +22,20 @@ std::shared_ptr<imageHandler> imhan(std::string path, bool isDir){
     try{
     	std::shared_ptr<imageHandler> ptr;
 		std::string tmp = std::string(path);
-    	if(!isDir)
+		std::string ext(getExtension(path));
+		if (ext == "mp4") {
+			cv::VideoCapture cap(path);
+			std::vector<cv::Mat> mlst;
+			for (bool isContinue = true; isContinue;) {
+				cv::Mat m;
+				if (!cap.read(m))
+					break;
+
+				mlst.push_back(m);
+		
+			}
+    		ptr = std::make_shared<multiImageHandler>(mlst);
+		} else if(!isDir)
     	//if(util::flst(path)[0].find("DIR") == std::string::npos)
     	    ptr = std::make_shared<singleImageHandler>(path);
     	else{

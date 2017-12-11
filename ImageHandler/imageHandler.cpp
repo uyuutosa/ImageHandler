@@ -312,7 +312,7 @@ bool imageHandler::all(){
 
 // ‰æ—pŠÖ”
 
-void imageHandler::view(std::string input_name, int wTime){
+void imageHandler::view(std::string input_name, int wTime, bool isMovie){
 }
 
 void imageHandler::histView(
