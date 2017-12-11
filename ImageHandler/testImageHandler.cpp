@@ -12,5 +12,5 @@ int main() {
 	//auto obj = imhan("C:/Users/sleep/ownCloud/share/tmp/North", true);
 	auto obj = imhan("testMov.mp4", false);
 	//obj->dump("", "Corvette_canny.jpg"); //canny
-	obj->gridImage(4,4)->RGB2Gray()->stichImg(4,4)->view("hello", 1, true);
+	obj->view("hello", 1, true);
 }
