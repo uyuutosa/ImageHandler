@@ -33,6 +33,7 @@ std::shared_ptr<imageHandler> imhan(std::string path, bool isDir, int movieSize)
 					break;
 
 				mlst.push_back(m);
+				cnt++;
 		
 			}
     		ptr = std::make_shared<multiImageHandler>(mlst);
