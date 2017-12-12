@@ -23,7 +23,7 @@ std::shared_ptr<imageHandler> imhan(std::string path, bool isDir){
     	std::shared_ptr<imageHandler> ptr;
 		std::string tmp = std::string(path);
 		std::string ext(getExtension(path));
-		if (ext == "mp4") {
+		if (ext == "mp4" || ext == "MP4") {
 			cv::VideoCapture cap(path);
 			std::vector<cv::Mat> mlst;
 			for (bool isContinue = true; isContinue;) {
