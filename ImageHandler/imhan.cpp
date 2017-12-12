@@ -18,7 +18,7 @@ std::shared_ptr<imageHandler> imhan(std::pair<std::string, cv::Mat> &pair){
     return ptr;
 }
 
-std::shared_ptr<imageHandler> imhan(std::string path, bool isDir){
+std::shared_ptr<imageHandler> imhan(std::string path, bool isDir, int movieSize){
     try{
     	std::shared_ptr<imageHandler> ptr;
 		std::string tmp = std::string(path);
@@ -26,9 +26,10 @@ std::shared_ptr<imageHandler> imhan(std::string path, bool isDir){
 		if (ext == "mp4" || ext == "MP4") {
 			cv::VideoCapture cap(path);
 			std::vector<cv::Mat> mlst;
+			int cnt(0);
 			for (bool isContinue = true; isContinue;) {
 				cv::Mat m;
-				if (!cap.read(m))
+				if (!cap.read(m) || cnt == movieSize)
 					break;
 
 				mlst.push_back(m);
